@@ -211,15 +211,18 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\surname}[1]{\def\@surname{#1}}
 
-\newcommand{\contact}[5]{%
+\newcommand{\contact}[4]{%
     \def\@contact{
         			%#1 	\newline
-        			#2, %
-        			#3	\hspace{0.5em}|\hspace{0.5em}%
-         			#4	\hspace{0.5em}|\hspace{0.5em}%
-        		 	#5
+        			#1,% street
+        			#2	\hspace{0.5em}|\hspace{0.5em}% zip+city
+         			#3	\hspace{0.5em}|\hspace{0.5em}% phone
+        		 	#4%mail
     }
 }
+
+\newcommand{\fieldA}[1]{\def\@fieldA{#1}}
+\newcommand{\fieldB}[1]{\def\@fieldB{#1}}
 
 \newcommand{\cvheader}{%
 	\begin{strip}
@@ -228,7 +231,7 @@
 	    \cvdeffont%
 	    \vspace*{-3pt}
 	    \centerline{\@contact} %
-	    \centerline{github.com/Sapp00\hspace{0.5em}|\hspace{0.5em}linkedin.com/in/maurice-heymann}
+	    \centerline{\@fieldA\hspace{0.5em}|\hspace{0.5em}\@fieldB}
 	    \vspace{5pt}
 	    \noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}
 	\end{strip}
@@ -240,7 +243,7 @@
 	    \centerline{\cvtitlefontb{\@name} \cvtitlefont\@surname}
 	    \vspace{5pt}
 	    \centerline{\cvdeffont \@contact}
-	    \centerline{\cvdeffont github.com/Sapp00\hspace{0.5em}|\hspace{0.5em}linkedin.com/in/maurice-heymann}
+	    \centerline{\cvdeffont \@fieldA\hspace{0.5em}|\hspace{0.5em}\@fieldB}
 	    
 	    \vspace{0.5em}
 	    \noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}
